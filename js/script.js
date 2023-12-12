@@ -3,12 +3,12 @@ const { createApp } = Vue;
 createApp ({
     data() {
         return {
-            activeImage: 0,
+            autoScroll = null;
             activeImage: 0,
             slides: [
                         {
                             image: 'img/01.webp',
-                            title: 'Marvel\'s Spiderman Miles Morale',
+                            title: 'Marvel\'s Spiderman Miles Morales',
                             text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                         }, {
                             image: 'img/02.webp',
@@ -37,5 +37,21 @@ createApp ({
         prevImg(){
             this.activeImage = (this.activeImage - 1 + this.slides.length) % this.slides.length;
         },
+        selectImage(index) {
+            this.activeImage = index;
+        },
+        startAutoScroll(){
+            this.autoScroll = setInterval(() => {
+                this.nextImg();
+            }, 3000);
+        },
+        pauseAutoScroll(){
+            clearInterval(this.autoScroll);
+            this.autoScroll = null; 
+        },
+        stopAutoScroll(){
+            this.pauseAutoScroll();
+            this.activeImage = 0;
+        }
     },
 }).mount('#app');
