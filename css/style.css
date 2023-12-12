@@ -105,3 +105,33 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     opacity: 0.5;
     border: 0;
 }
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.play, .pause, .stop {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+
+i {
+    font-size: 20px;
+}
+
+.play {
+    background-color: rgb(40, 183, 40);
+}
+
+.pause {
+    background-color: yellow;
+}
+
+.stop {
+    background-color: red;
+}

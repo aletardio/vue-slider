@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp ({
     data() {
         return {
-            autoScroll = null;
+            autoScroll : null,
             activeImage: 0,
             slides: [
                         {
